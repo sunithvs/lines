@@ -3,7 +3,7 @@ name: Fetch Google Sheets Data
 on:
 #  schedule:
 #    - cron: '0 6-23/3 * * *'  # Runs every 3 hours between 6 AM and 11 PM
-#  workflow_dispatch:  # This allows you to manually trigger the workflow from the Actions tab.
+  workflow_dispatch:  # This allows you to manually trigger the workflow from the Actions tab.
 
 permissions:
   contents: write  # Ensure the workflow has write access to contents
@@ -21,7 +21,7 @@ jobs:
 
     - name: Fetch Google Sheets Data
       run: |
-          curl -L -s -o data/res.json "https://script.google.com/macros/s/AKfycbwSeOnHgEqNzHJzLheV9zUi3VP6ifDCJLcxWxE_LsXCHwwEcAur55y2WuNJjaWcex-1iA/exec"
+          curl -L -s -o data/res.json "https://script.google.com/macros/s/AKfycbw3Ie7_wX8vsI58hZEVa_Xy0GA2FKECsIWNZ8R3aOpyAjYChgGY2HTgPR1Po-okCrEQ2w/exec"
   
     - name: Commit and push changes if there are any
 
