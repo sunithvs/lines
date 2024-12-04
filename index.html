@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickup Line Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .float-up {
+            animation: floatUp 15s linear infinite;
+        }
+
+        .float-diagonal {
+            animation: floatDiagonal 18s linear infinite;
+        }
+
+        .float-zigzag {
+            animation: floatZigzag 20s linear infinite;
+        }
+
+        .rotate-animation {
+            animation: rotate 12s linear infinite;
+        }
+
+        .pulse-animation {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+                transform: translateY(80vh) scale(1) rotate(180deg);
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-20vh) scale(0.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatDiagonal {
+            0% {
+                transform: translate(-10vw, 100vh) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.3;
+                transform: translate(30vw, 60vh) scale(1);
+            }
+            80% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(110vw, -20vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatZigzag {
+            0% {
+                transform: translate(0, 100vh) scale(0);
+                opacity: 0;
+            }
+            25% {
+                transform: translate(20vw, 60vh) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-20vw, 30vh) scale(0.8);
+            }
+            75% {
+                transform: translate(10vw, 10vh) scale(0.6);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(0, -20vh) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        .animate-generating {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .toast {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .generate-btn-pulse {
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            mix-blend-mode: screen;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 min-h-screen flex items-center justify-center p-4 overflow-hidden">
+<!-- Background Animations -->
+<div id="animation-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
+
+<div class="max-w-md w-full space-y-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center">
+        <h1 class="text-4xl font-bold text-pink-600 mb-2">Pickup Line Generator</h1>
+        <p class="text-gray-600">Find your perfect ice breaker!</p>
+    </div>
+
+    <!-- Result Box -->
+    <div id="resultBox"
+         class="bg-white/90 backdrop-blur-sm p-6 rounded-3xl	 shadow-lg min-h-[100px] flex items-center">
+        <div class="flex justify-between items-start w-full">
+            <p id="pickupLine" class="text-gray-800 text-lg flex-grow">Your pickup line will appear here...</p>
+            <button id="copyBtn" class="text-pink-500 hover:text-pink-600 p-2 ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Category Tags -->
+    <div class="flex justify-center gap-3 flex-wrap" id="categories">
+        <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
+                data-category="happy">Happy
+        </button>
+        <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
+                data-category="sad">Sad
+        </button>
+        <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
+                data-category="romantic">Romantic
+        </button>
+    </div>
+
+    <!-- Generate Button -->
+    <div class="text-center">
+        <button id="generateBtn"
+                class="generate-btn-pulse bg-pink-500 text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-pink-600 transition-colors transform hover:scale-105 duration-200 flex items-center justify-center gap-2 mx-auto shadow-lg">
+            <span>Generate Magic ✨</span>
+            <svg id="loadingIcon" class="hidden w-6 h-6 animate-generating" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg hidden toast">
+        Copied to clipboard! 📋
+    </div>
+</div>
+
+<script>
+    let pickupLinesData = {};
+    let selectedCategory = null;
+    let userSelectedCategory = false;
+
+    // Enhanced background animations
+    function createFloatingElement() {
+        const elements = [
+            // Hearts
+            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
+            // Circles
+            `<div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-300 to-purple-300"></div>`,
+            // Stars
+            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`,
+            // Diamonds
+            `<div class="w-8 h-8 transform rotate-45 bg-gradient-to-tr from-pink-300 to-purple-300"></div>`,
+            // Sparkles
+            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>`
+        ];
+
+        const animations = ['float-up', 'float-diagonal', 'float-zigzag'];
+        const element = document.createElement('div');
+        element.className = `floating-element ${animations[Math.floor(Math.random() * animations.length)]}`;
+
+        if (Math.random() > 0.5) {
+            element.classList.add('rotate-animation');
+        }
+        if (Math.random() > 0.7) {
+            element.classList.add('pulse-animation');
+        }
+
+        element.style.left = Math.random() * 100 + 'vw';
+        element.style.opacity = (Math.random() * 0.3 + 0.1).toString();
+        element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+
+        document.getElementById('animation-container').appendChild(element);
+
+        setTimeout(() => {
+            element.remove();
+        }, 20000);
+    }
+
+    // Create sparkle effect
+    function createSparkle(x, y) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        const size = Math.random() * 10 + 5;
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 1000);
+    }
+
+    // Create multiple floating elements periodically
+    setInterval(() => {
+        for (let i = 0; i < 2; i++) {
+            setTimeout(() => createFloatingElement(), i * 500);
+        }
+    }, 2000);
+
+    // Mouse move sparkle effect
+    document.addEventListener('mousemove', (e) => {
+        if (Math.random() > 0.9) {
+            createSparkle(e.pageX, e.pageY);
+        }
+    });
+
+    // Load pickup lines
+    fetch('data/res.json')
+        .then(response => response.json())
+        .then(data => {
+            pickupLinesData = data;
+        });
+
+    // Category selection
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            document.querySelectorAll('.category-btn').forEach(b => {
+                b.classList.remove('bg-pink-500', 'text-white');
+            });
+            if (selectedCategory === category) {
+                selectedCategory = null;
+                userSelectedCategory = false;
+            } else {
+                selectedCategory = category;
+                userSelectedCategory = true;
+                btn.classList.add('bg-pink-500', 'text-white');
+            }
+        });
+    });
+
+    // Generate button
+    document.getElementById('generateBtn').addEventListener('click', async () => {
+        const loadingIcon = document.getElementById('loadingIcon');
+        const pickupLineElement = document.getElementById('pickupLine');
+
+        // Clear previous selection if it wasn't user-selected
+        if (!userSelectedCategory) {
+            selectedCategory = null;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-pink-500', 'text-white');
+            });
+        }
+
+        // If no category selected, choose random category
+        if (!selectedCategory) {
+            const categories = Object.keys(pickupLinesData).filter(cat =>
+                pickupLinesData[cat] && pickupLinesData[cat].length > 0
+            );
+            if (categories.length > 0) {
+                selectedCategory = categories[Math.floor(Math.random() * categories.length)];
+                if (!userSelectedCategory) {
+                    document.querySelector(`[data-category="${selectedCategory}"]`)?.classList.add('bg-pink-500', 'text-white');
+                }
+            }
+        }
+
+        loadingIcon.classList.remove('hidden');
+        document.getElementById("generateBtn").disabled = true;
+
+        // Simulate loading
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        if (!pickupLinesData[selectedCategory] || pickupLinesData[selectedCategory].length === 0) {
+            pickupLineElement.textContent = 'No more pickup lines available for this category!';
+        } else {
+            const lines = pickupLinesData[selectedCategory];
+            const randomIndex = Math.floor(Math.random() * lines.length);
+            const line = lines[randomIndex];
+
+            // Remove the used line
+            pickupLinesData[selectedCategory] = lines.filter((_, index) => index !== randomIndex);
+            pickupLineElement.textContent = line;
+        }
+
+        loadingIcon.classList.add('hidden')
+        document.getElementById("generateBtn").disabled = false;
+    });
+
+    // Copy button
+    document.getElementById('copyBtn').addEventListener('click', () => {
+        const pickupLine = document.getElementById('pickupLine').textContent;
+        navigator.clipboard.writeText(pickupLine);
+
+        const toast = document.getElementById('toast');
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 2000);
+    });
+</script>
+</body>
+</html>
+
