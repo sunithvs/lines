@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,16 @@
     <meta name="title" content="Pickup Line Generator Hey Cutie">
     <meta name="description" content="Pickup Line Generator">
     <meta name="keywords"
-          content="Funny Pickup LinesBest Pickup LinesRomantic Conversation StartersFlirting Tips GeneratorOnline Pickup Line CreatorDating Confidence BoosterClever Conversation OpenersIce Breaker LinesSmooth Talking GeneratorChat-Up LinesWitty Flirting PhrasesDating App Line GeneratorHumorous Romantic OpenersFree Pickup Line ToolLove Connection StarterSocial Interaction IcebreakersAI Pickup Line AssistantConversation Spark GeneratorDating Communication HelperGuaranteed Conversation Starter">
+        content="Funny Pickup LinesBest Pickup LinesRomantic Conversation StartersFlirting Tips GeneratorOnline Pickup Line CreatorDating Confidence BoosterClever Conversation OpenersIce Breaker LinesSmooth Talking GeneratorChat-Up LinesWitty Flirting PhrasesDating App Line GeneratorHumorous Romantic OpenersFree Pickup Line ToolLove Connection StarterSocial Interaction IcebreakersAI Pickup Line AssistantConversation Spark GeneratorDating Communication HelperGuaranteed Conversation Starter">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="revisit-after" content="1 days">
     <!-- Primary Meta Tags -->
     <title>Pickup Line Generator</title>
-    <meta name="title" content="Pickup Line Generator"/>
+    <meta name="title" content="Pickup Line Generator" />
     <meta name="description" content="Unleash confidence and charm with our innovative Pickup Line Generator. Crafted by advanced AI, our tool delivers witty, personalized conversation starters tailored to your style and scenario. Whether you're breaking ice on dating apps, at social events, or seeking that perfect first impression, we help you transform awkward moments into engaging interactions. Generate unlimited unique lines, explore different tones from playful to profound, and discover your perfect conversation opener. Free, fun, and designed to boost your social success.
-"/>
+" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
@@ -37,9 +38,14 @@
     <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
         .floating-element {
             position: absolute;
             pointer-events: none;
@@ -71,13 +77,16 @@
                 transform: translateY(100vh) scale(0) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.3;
                 transform: translateY(80vh) scale(1) rotate(180deg);
             }
+
             90% {
                 opacity: 0.2;
             }
+
             100% {
                 transform: translateY(-20vh) scale(0.5) rotate(360deg);
                 opacity: 0;
@@ -89,13 +98,16 @@
                 transform: translate(-10vw, 100vh) scale(0);
                 opacity: 0;
             }
+
             20% {
                 opacity: 0.3;
                 transform: translate(30vw, 60vh) scale(1);
             }
+
             80% {
                 opacity: 0.2;
             }
+
             100% {
                 transform: translate(110vw, -20vh) scale(0.5);
                 opacity: 0;
@@ -107,17 +119,21 @@
                 transform: translate(0, 100vh) scale(0);
                 opacity: 0;
             }
+
             25% {
                 transform: translate(20vw, 60vh) scale(1);
                 opacity: 0.3;
             }
+
             50% {
                 transform: translate(-20vw, 30vh) scale(0.8);
             }
+
             75% {
                 transform: translate(10vw, 10vh) scale(0.6);
                 opacity: 0.2;
             }
+
             100% {
                 transform: translate(0, -20vh) scale(0);
                 opacity: 0;
@@ -128,6 +144,7 @@
             from {
                 transform: rotate(0deg);
             }
+
             to {
                 transform: rotate(360deg);
             }
@@ -138,10 +155,12 @@
                 transform: scale(1);
                 opacity: 0.2;
             }
+
             50% {
                 transform: scale(1.2);
                 opacity: 0.3;
             }
+
             100% {
                 transform: scale(1);
                 opacity: 0.2;
@@ -156,6 +175,7 @@
             from {
                 transform: rotate(0deg);
             }
+
             to {
                 transform: rotate(360deg);
             }
@@ -170,6 +190,7 @@
                 transform: translateY(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -184,9 +205,11 @@
             0% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
+
             100% {
                 transform: scale(1);
             }
@@ -201,341 +224,377 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 min-h-screen">
-<div id="generator-section" class="min-h-screen flex items-center justify-center p-4">
 
-    <!-- Background Animations -->
-    <div id="animation-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
+<body class="bg-gradient-to-br from-pink-100 via-pink-100 to-pink-200 min-h-screen">
+    <div id="generator-section" class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-md w-full space-y-8 relative z-10">
-        <!-- Header -->
-        <div class="text-center">
-            <!--        <h1 class="text-4xl font-bold text-pink-600 mb-2">Pickup Line Generator</h1>-->
-            <div class="flex justify-center	items-center	">
-                <svg width="327" height="77" viewBox="0 0 327 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.264 18.812V30.183H28.461V18.812C28.461 13.417 27.631 10.844 26.137 8.105H43.235C41.824 10.927 40.911 13.417 40.911 18.812V44.293C40.911 49.688 41.824 52.178 43.235 55H26.137C27.631 52.178 28.461 49.688 28.461 44.293V32.673H15.264V44.293C15.264 49.688 16.177 52.178 17.588 55H0.49C1.984 52.178 2.814 49.688 2.814 44.293V18.812C2.814 13.417 1.984 10.844 0.49 8.105H17.588C16.177 10.927 15.264 13.417 15.264 18.812ZM83.2572 40.724C84.5852 48.941 78.8582 55.83 67.3212 55.83C57.9422 55.83 48.2312 48.858 48.2312 36.74C48.2312 23.045 58.9382 16.737 67.8192 16.737C72.9652 16.737 80.1862 19.227 80.1862 25.95C80.1862 31.179 74.0442 36.491 61.0962 39.313C65.5782 46.451 77.9452 47.447 83.2572 40.724ZM59.9342 37.155C66.1592 35.661 70.3092 29.685 70.2262 25.286C70.2262 15.907 58.4402 17.982 58.4402 30.349C58.4402 32.756 58.9382 35.08 59.9342 37.155ZM127.507 16.82C125.93 17.401 122.859 20.306 119.954 27.444L103.852 66.869C101.113 73.592 96.2992 76.331 91.9002 76.331C87.0032 76.331 82.6872 72.845 82.6872 67.616C82.6872 64.13 85.0112 59.399 91.6512 58.984C88.9952 62.885 92.4812 67.035 96.5482 67.035C99.1212 67.035 101.86 65.375 103.603 60.976L105.263 56.909L89.5762 27.527C86.3392 21.385 83.6002 18.231 81.2762 16.82H102.607C101.611 17.982 100.698 22.132 103.603 27.527L111.322 41.803L115.804 31.179C118.875 23.709 114.227 18.314 112.982 16.82H127.507ZM191.334 43.546C188.927 52.012 180.378 55.83 173.323 55.83C157.47 55.83 149.668 43.878 149.668 31.843C149.668 17.899 159.296 7.275 173.572 7.275C192.413 7.275 191.915 28.938 180.046 28.938C176.643 28.938 173.24 26.697 172.908 22.713C175.647 22.381 177.224 19.808 177.224 16.654C177.224 12.504 174.07 10.097 170.418 10.097C165.438 10.097 159.545 14.579 159.545 25.12C159.545 34.665 166.683 45.787 180.129 45.787C183.449 45.787 187.184 45.123 191.334 43.546ZM233.969 16.405V44.293C234.218 49.688 234.799 52.178 236.293 55H221.519V45.953C218.697 50.933 215.211 55.747 209.069 55.83C202.263 55.83 198.113 50.601 198.113 44.708V33.503C198.113 29.353 197.034 26.033 193.631 24.124C198.528 23.46 205.168 21.8 210.563 16.405V38.566C210.563 42.965 212.223 46.783 215.377 46.783C219.029 46.783 221.519 43.546 221.519 38.068V38.317V33.503C221.519 29.353 220.357 26.033 217.037 24.124C221.934 23.46 228.574 21.8 233.969 16.405ZM240.682 10.595C245.579 9.931 252.219 8.686 257.614 3.291V16.82H263.59V19.31H257.614V43.961C257.614 48.526 259.772 49.854 261.598 49.854C262.345 49.854 263.009 49.605 263.507 49.356C262.76 51.68 260.602 55.83 253.63 55.83C246.575 55.83 245.164 49.854 245.164 44.957V19.31H240.101V16.82H245.081C244.998 14.496 243.67 11.757 240.682 10.595ZM269.167 8.105C269.167 3.706 272.155 0.800995 276.554 0.800995C280.953 0.800995 283.858 3.706 283.858 8.105C283.858 12.504 280.953 15.409 276.554 15.409C272.155 15.409 269.167 12.504 269.167 8.105ZM282.779 16.405V44.293C282.779 49.688 283.609 52.178 285.103 55H268.005C269.416 52.178 270.329 49.688 270.329 44.293V33.503C270.329 29.353 269.167 26.033 265.847 24.124C270.744 23.46 277.384 21.8 282.779 16.405ZM325.073 40.724C326.401 48.941 320.674 55.83 309.137 55.83C299.758 55.83 290.047 48.858 290.047 36.74C290.047 23.045 300.754 16.737 309.635 16.737C314.781 16.737 322.002 19.227 322.002 25.95C322.002 31.179 315.86 36.491 302.912 39.313C307.394 46.451 319.761 47.447 325.073 40.724ZM301.75 37.155C307.975 35.661 312.125 29.685 312.042 25.286C312.042 15.907 300.256 17.982 300.256 30.349C300.256 32.756 300.754 35.08 301.75 37.155Z"
-                          fill="#DB2777"/>
-                </svg>
+        <!-- Background Animations -->
+        <div id="animation-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
 
-            </div>
-
-            <p class="text-gray-600">Find your perfect ice breaker!</p>
-        </div>
-
-        <!-- Result Box -->
-        <div id="resultBox"
-             class="bg-white/90 backdrop-blur-sm p-6 rounded-3xl	 shadow-lg min-h-[100px] flex items-center">
-            <div class="flex justify-between items-start w-full">
-                <p id="pickupLine" class="text-gray-800 text-lg flex-grow">Your pickup line will appear here...</p>
-                <button id="copyBtn" class="text-pink-500 hover:text-pink-600 p-2 ml-4">
-                    <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"-->
-                    <!--                     stroke="currentColor">-->
-                    <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-                    <!--                          d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>-->
-                    <!--                </svg>-->
-                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1304_1253)">
-                            <path d="M14.9116 24.333H5.9585C3.89069 24.333 2.2085 22.6508 2.2085 20.583V7.87988C2.2085 5.81207 3.89069 4.12988 5.9585 4.12988H14.9116C16.9794 4.12988 18.6616 5.81207 18.6616 7.87988V20.583C18.6616 22.6508 16.9794 24.333 14.9116 24.333ZM5.9585 6.00488C4.92468 6.00488 4.0835 6.84607 4.0835 7.87988V20.583C4.0835 21.6168 4.92468 22.458 5.9585 22.458H14.9116C15.9454 22.458 16.7866 21.6168 16.7866 20.583V7.87988C16.7866 6.84607 15.9454 6.00488 14.9116 6.00488H5.9585ZM22.4116 18.2393V4.08301C22.4116 2.0152 20.7294 0.333008 18.6616 0.333008H8.25537C7.73755 0.333008 7.31787 0.752686 7.31787 1.27051C7.31787 1.78833 7.73755 2.20801 8.25537 2.20801H18.6616C19.6954 2.20801 20.5366 3.04919 20.5366 4.08301V18.2393C20.5366 18.7571 20.9563 19.1768 21.4741 19.1768C21.9919 19.1768 22.4116 18.7571 22.4116 18.2393Z"
-                                  fill="#DB2777"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_1304_1253">
-                                <rect width="24" height="24" fill="white" transform="translate(0.333496 0.333008)"/>
-                            </clipPath>
-                        </defs>
+        <div class="max-w-md w-full space-y-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center">
+                <!--        <h1 class="text-4xl font-bold text-pink-600 mb-2">Pickup Line Generator</h1>-->
+                <div class="flex justify-center	items-center	">
+                    <svg width="327" height="77" viewBox="0 0 327 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.264 18.812V30.183H28.461V18.812C28.461 13.417 27.631 10.844 26.137 8.105H43.235C41.824 10.927 40.911 13.417 40.911 18.812V44.293C40.911 49.688 41.824 52.178 43.235 55H26.137C27.631 52.178 28.461 49.688 28.461 44.293V32.673H15.264V44.293C15.264 49.688 16.177 52.178 17.588 55H0.49C1.984 52.178 2.814 49.688 2.814 44.293V18.812C2.814 13.417 1.984 10.844 0.49 8.105H17.588C16.177 10.927 15.264 13.417 15.264 18.812ZM83.2572 40.724C84.5852 48.941 78.8582 55.83 67.3212 55.83C57.9422 55.83 48.2312 48.858 48.2312 36.74C48.2312 23.045 58.9382 16.737 67.8192 16.737C72.9652 16.737 80.1862 19.227 80.1862 25.95C80.1862 31.179 74.0442 36.491 61.0962 39.313C65.5782 46.451 77.9452 47.447 83.2572 40.724ZM59.9342 37.155C66.1592 35.661 70.3092 29.685 70.2262 25.286C70.2262 15.907 58.4402 17.982 58.4402 30.349C58.4402 32.756 58.9382 35.08 59.9342 37.155ZM127.507 16.82C125.93 17.401 122.859 20.306 119.954 27.444L103.852 66.869C101.113 73.592 96.2992 76.331 91.9002 76.331C87.0032 76.331 82.6872 72.845 82.6872 67.616C82.6872 64.13 85.0112 59.399 91.6512 58.984C88.9952 62.885 92.4812 67.035 96.5482 67.035C99.1212 67.035 101.86 65.375 103.603 60.976L105.263 56.909L89.5762 27.527C86.3392 21.385 83.6002 18.231 81.2762 16.82H102.607C101.611 17.982 100.698 22.132 103.603 27.527L111.322 41.803L115.804 31.179C118.875 23.709 114.227 18.314 112.982 16.82H127.507ZM191.334 43.546C188.927 52.012 180.378 55.83 173.323 55.83C157.47 55.83 149.668 43.878 149.668 31.843C149.668 17.899 159.296 7.275 173.572 7.275C192.413 7.275 191.915 28.938 180.046 28.938C176.643 28.938 173.24 26.697 172.908 22.713C175.647 22.381 177.224 19.808 177.224 16.654C177.224 12.504 174.07 10.097 170.418 10.097C165.438 10.097 159.545 14.579 159.545 25.12C159.545 34.665 166.683 45.787 180.129 45.787C183.449 45.787 187.184 45.123 191.334 43.546ZM233.969 16.405V44.293C234.218 49.688 234.799 52.178 236.293 55H221.519V45.953C218.697 50.933 215.211 55.747 209.069 55.83C202.263 55.83 198.113 50.601 198.113 44.708V33.503C198.113 29.353 197.034 26.033 193.631 24.124C198.528 23.46 205.168 21.8 210.563 16.405V38.566C210.563 42.965 212.223 46.783 215.377 46.783C219.029 46.783 221.519 43.546 221.519 38.068V38.317V33.503C221.519 29.353 220.357 26.033 217.037 24.124C221.934 23.46 228.574 21.8 233.969 16.405ZM240.682 10.595C245.579 9.931 252.219 8.686 257.614 3.291V16.82H263.59V19.31H257.614V43.961C257.614 48.526 259.772 49.854 261.598 49.854C262.345 49.854 263.009 49.605 263.507 49.356C262.76 51.68 260.602 55.83 253.63 55.83C246.575 55.83 245.164 49.854 245.164 44.957V19.31H240.101V16.82H245.081C244.998 14.496 243.67 11.757 240.682 10.595ZM269.167 8.105C269.167 3.706 272.155 0.800995 276.554 0.800995C280.953 0.800995 283.858 3.706 283.858 8.105C283.858 12.504 280.953 15.409 276.554 15.409C272.155 15.409 269.167 12.504 269.167 8.105ZM282.779 16.405V44.293C282.779 49.688 283.609 52.178 285.103 55H268.005C269.416 52.178 270.329 49.688 270.329 44.293V33.503C270.329 29.353 269.167 26.033 265.847 24.124C270.744 23.46 277.384 21.8 282.779 16.405ZM325.073 40.724C326.401 48.941 320.674 55.83 309.137 55.83C299.758 55.83 290.047 48.858 290.047 36.74C290.047 23.045 300.754 16.737 309.635 16.737C314.781 16.737 322.002 19.227 322.002 25.95C322.002 31.179 315.86 36.491 302.912 39.313C307.394 46.451 319.761 47.447 325.073 40.724ZM301.75 37.155C307.975 35.661 312.125 29.685 312.042 25.286C312.042 15.907 300.256 17.982 300.256 30.349C300.256 32.756 300.754 35.08 301.75 37.155Z"
+                            fill="#DB2777" />
                     </svg>
 
+                </div>
 
+                <p class="text-gray-600">Spark Connections, Not Just Lines</p>
+            </div>
+
+            <!-- Result Box -->
+            <div id="resultBox" class="bg-white/90 backdrop-blur-sm p-6 rounded-3xl min-h-[100px] flex items-center">
+                <div class="flex justify-between items-start w-full ">
+                    <p id="pickupLine" class="text-gray-500 text-lg flex-grow ">Your pickup line will appear here...</p>
+                    <button id="copyBtn" class="text-pink-500 hover:text-pink-600 p-2 ml-4">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1304_1253)">
+                                <path
+                                    d="M14.9116 24.333H5.9585C3.89069 24.333 2.2085 22.6508 2.2085 20.583V7.87988C2.2085 5.81207 3.89069 4.12988 5.9585 4.12988H14.9116C16.9794 4.12988 18.6616 5.81207 18.6616 7.87988V20.583C18.6616 22.6508 16.9794 24.333 14.9116 24.333ZM5.9585 6.00488C4.92468 6.00488 4.0835 6.84607 4.0835 7.87988V20.583C4.0835 21.6168 4.92468 22.458 5.9585 22.458H14.9116C15.9454 22.458 16.7866 21.6168 16.7866 20.583V7.87988C16.7866 6.84607 15.9454 6.00488 14.9116 6.00488H5.9585ZM22.4116 18.2393V4.08301C22.4116 2.0152 20.7294 0.333008 18.6616 0.333008H8.25537C7.73755 0.333008 7.31787 0.752686 7.31787 1.27051C7.31787 1.78833 7.73755 2.20801 8.25537 2.20801H18.6616C19.6954 2.20801 20.5366 3.04919 20.5366 4.08301V18.2393C20.5366 18.7571 20.9563 19.1768 21.4741 19.1768C21.9919 19.1768 22.4116 18.7571 22.4116 18.2393Z"
+                                    fill="#DB2777" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1304_1253">
+                                    <rect width="24" height="24" fill="white"
+                                        transform="translate(0.333496 0.333008)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Category Tags -->
+            <div class="flex justify-center gap-3 flex-wrap" id="categories">
+                <button
+                    class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-150 transition-colors category-btn  active:bg-[#DB2777]"
+                    data-category="Funny">Funny
+                </button>
+                <button
+                    class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-150 transition-colors category-btn active:bg-[#DB2777]"
+                    data-category="Flirty">Flirty
+                </button>
+                <button
+                    class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-150 transition-colors category-btn  active:bg-[#DB2777]"
+                    data-category="Teasing">Teasing
+                </button>
+                <button
+                    class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-150 transition-colors category-btn  active:bg-[#DB2777]"
+                    data-category="Spicy">Spicy
                 </button>
             </div>
-        </div>
 
-
-        <!-- Category Tags -->
-        <div class="flex justify-center gap-3 flex-wrap" id="categories">
-            <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
-                    data-category="Funny">Funny
-            </button>
-            <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
-                    data-category="Flirty">Flirty
-            </button>
-            <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
-                    data-category="Teasing">Teasing
-            </button>
-            <button class="px-6 py-2 rounded-full border-2 border-pink-400 text-pink-600 hover:bg-pink-50 transition-colors category-btn shadow-md"
-                    data-category="Spicy">Spicy
-            </button>
-        </div>
-
-        <!-- Generate Button -->
-        <div class="text-center">
-            <button id="generateBtn"
-                    class="generate-btn-pulse bg-pink-500 text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-pink-600 transition-colors transform hover:scale-105 duration-200 flex items-center justify-center gap-2 mx-auto shadow-lg">
-                <span>Generate Magic ✨</span>
-                <svg id="loadingIcon" class="hidden w-6 h-6 animate-generating" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Toast Notification -->
-        <div id="toast"
-             class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg hidden toast">
-            Copied to clipboard! 📋
-        </div>
-    </div>
-</div>
-<!-- New Info Section -->
-<div id="info-section" class="bg-white/90 backdrop-blur-sm min-h-screen p-8">
-    <div class="max-w-4xl mx-auto space-y-8">
-        <h2 class="text-4xl font-bold text-pink-600 text-center mb-8">The Art of the Perfect Pickup Line</h2>
-
-        <div class="bg-pink-50 p-6 rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-pink-700 mb-4">Unlocking Social Confidence</h3>
-            <p class="text-gray-700 leading-relaxed">
-                Pickup lines are more than just words. They're social algorithms, carefully crafted to break through
-                barriers, demonstrate wit, and create unexpected moments of genuine human connection.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-purple-50 p-6 rounded-xl shadow-md">
-                <h4 class="text-xl font-semibold text-purple-700 mb-4">Why Pickup Lines Matter</h4>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Break through social barriers</li>
-                    <li>Demonstrate personality</li>
-                    <li>Create unexpected connections</li>
-                    <li>Build social confidence</li>
-                </ul>
+            <!-- Generate Button -->
+            <div class="text-center">
+                <button id="generateBtn"
+                    class="generate-btn-pulse bg-[#DB2777] text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-pink-600 transition-colors transform hover:scale-105 duration-200 flex items-center justify-center gap-2 mx-auto">
+                    Generate Magic ✨
+                    <svg id="loadingIcon" class="hidden w-6 h-6 animate-generating" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                        </circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                        </path>
+                    </svg>
+                </button>
             </div>
-            <div class="bg-pink-50 p-6 rounded-xl shadow-md">
-                <h4 class="text-xl font-semibold text-pink-700 mb-4">Pro Tips</h4>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Authenticity trumps rehearsed scripts</li>
-                    <li>Context is king</li>
-                    <li>Humor is your secret weapon</li>
-                    <li>Confidence is attractive</li>
-                </ul>
+
+            <!-- Toast Notification -->
+            <div id="toast"
+                class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg hidden toast">
+                Copied to clipboard! 📋
             </div>
         </div>
+    </div>
+    <!-- New Info Section -->
+    <div id="info-section" class="bg-pink-50 py-8 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-pink-600 text-center my-5">The Art of the Perfect Pickup Line
+            </h2>
 
-        <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-8 rounded-xl shadow-lg text-center">
-            <h3 class="text-3xl font-bold text-pink-700 mb-4">Our Promise</h3>
-            <p class="text-gray-800 italic">
-                At HeyCutie.in, we believe in the power of human connection. Our AI doesn't replace genuine interaction
-                – it empowers it.
+            <div class="bg-pink-50 p-2 rounded-xl ">
+                <h3 class="text-2xl font-semibold text-black mb-4">Unlocking Social Confidence</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Pickup lines are more than just words. They're social algorithms, carefully crafted to break through
+                    barriers, demonstrate wit, and create unexpected moments of genuine human connection.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-[#FFEBFF] p-6 rounded-xl ">
+                    <h4 class="text-xl font-semibold text-[#DB2777] mb-4">Why Pickup Lines Matter</h4>
+                    <div class="list-disc list-inside text-gray-700 space-y-2 text-left">
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Break through social barriers</div>
+
+                        </div>
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Demonstrate personality</div>
+
+                        </div>
+
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Create unexpected connections</div>
+
+                        </div>
+
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Build social confidence</div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="bg-[#FFEBFF] p-6 rounded-xl ">
+                    <h4 class="text-xl font-semibold text-[#DB2777] mb-4">Why Pickup Lines Matter</h4>
+                    <div class="list-disc list-inside text-gray-700 space-y-2 text-left">
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Break through social barriers</div>
+
+                        </div>
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Demonstrate personality</div>
+
+                        </div>
+
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Create unexpected connections</div>
+
+                        </div>
+
+                        <div class="flex items-center	"> <svg class="mr-2" width="12" height="12" viewBox="0 0 18 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.50487 0.682819C8.30049 -0.212679 9.69951 -0.21268 10.4951 0.682818L12.7054 3.17051C12.8975 3.38672 13.1342 3.55869 13.3992 3.67458L16.4481 5.0079C17.5456 5.48785 17.9779 6.8184 17.3721 7.8518L15.6892 10.7226C15.5429 10.9721 15.4525 11.2504 15.4242 11.5382L15.0983 14.8499C14.981 16.0421 13.8492 16.8644 12.6791 16.6076L9.42879 15.8941C9.14629 15.8321 8.85371 15.8321 8.57121 15.8941L5.32087 16.6076C4.15084 16.8644 3.01901 16.0421 2.9017 14.8499L2.57581 11.5382C2.54748 11.2504 2.45707 10.9721 2.3108 10.7226L0.62787 7.8518C0.0220613 6.8184 0.454381 5.48785 1.55191 5.0079L4.60084 3.67458C4.86583 3.55869 5.10254 3.38672 5.29463 3.17051L7.50487 0.682819Z"
+                                    fill="#DB2777" />
+                            </svg>
+                            <div>Build social confidence</div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- <div class="bg-[#FFEBFF] p-6 rounded-xl">
+                    <h4 class="text-xl font-semibold text-[#B438FF]-700 mb-4">Pro Tips</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-left">
+                        <li>Authenticity trumps rehearsed scripts</li>
+                        <li>Context is king</li>
+                        <li>Humor is your secret weapon</li>
+                        <li>Confidence is attractive</li>
+                    </ul>
+                </div> -->
+            </div>
+            <div class="max-w-4xl mx-auto space-y-8  pt-5">
+                <h2 class="text-4xl font-bold text-[#DB2777] text-center my-8">Frequently Asked Questions</h2>
+
+                <div class="accordion">
+                    <div class="accordion-item border-b border-pink-[#DB2777] mb-4">
+                        <button
+                            class="accordion-header w-full text-left flex justify-between items-center p-4 bg-pink-50 rounded-t-xl"
+                            data-expanded="true">
+                            <h3 class="text-xl font-semibold text-pink-[#DB2777]">What are pickup lines?</h3>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content p-4 bg-pink-25 text-gray-700">
+                            <p>Pickup lines are clever, humorous phrases designed to initiate conversation and express
+                                romantic or social interest. They're conversation starters aimed at breaking the ice and
+                                creating a memorable first impression.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b border-pink-[#DB2777] mb-4">
+                        <button
+                            class="accordion-header w-full text-left flex justify-between items-center p-4 bg-pink-50 rounded-t-xl"
+                            data-expanded="false">
+                            <h3 class="text-xl font-semibold text-pink-[#DB2777]">How do I use HeyCutie.in?</h3>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content p-4 bg-pink-25 text-gray-700 hidden">
+                            <ol class="list-decimal list-inside text-left">
+                                <li>Choose your preferred tone (funny, romantic, bold)</li>
+                                <li>Input context or preferences</li>
+                                <li>Click "Generate"</li>
+                                <li>Copy and use your unique line</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b border-pink-[#DB2777] mb-4">
+                        <button
+                            class="accordion-header w-full text-left flex justify-between items-center p-4 bg-pink-50 rounded-t-xl"
+                            data-expanded="false">
+                            <h3 class="text-xl font-semibold text-pink-[#DB2777]">Are pickup lines effective?</h3>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content p-4 bg-pink-25 text-gray-700 hidden text-left">
+                            <p>When used respectfully and in the right context, pickup lines can:</p>
+                            <ul class="list-disc list-inside text-left">
+                                <li>Boost confidence</li>
+                                <li>Create memorable interactions</li>
+                                <li>Showcase personality</li>
+                                <li>Initiate conversations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b border-pink-[#DB2777] mb-4">
+                        <button
+                            class="accordion-header w-full text-left flex justify-between items-center p-4 bg-pink-50 rounded-t-xl"
+                            data-expanded="false">
+                            <h3 class="text-xl font-semibold text-pink-[#DB2777]">Can I use pickup lines in professional
+                                settings?</h3>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content p-4 bg-pink-25 text-gray-700 hidden text-left">
+                            <p>While romantic pickup lines aren't appropriate, clever icebreakers can help in
+                                networking,
+                                team-building, and social professional events.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b border-pink-[#DB2777] mb-4">
+                        <button
+                            class="accordion-header w-full text-left flex justify-between items-center p-4 bg-pink-50 rounded-t-xl "
+                            data-expanded="false">
+                            <h3 class="text-xl font-semibold text-pink-[#DB2777]">Are the lines generated by AI really
+                                unique?</h3>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content p-4 bg-pink-25 text-gray-700 hidden text-left">
+                            <p>Yes! Our AI creates context-specific, personalized lines that adapt to your input,
+                                ensuring
+                                originality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#DB2777]  p-8 rounded-xl shadow-lg text-center">
+                <h3 class="text-3xl font-bold text-white mb-3">Our Promise</h3>
+                <p class="text-white text-m italic ">
+                    At HeyCutie.in, we believe in the power of human connection. <br>
+                    Our AI doesn't replace genuine
+                    interaction
+                    – it empowers it.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-pink-50 py-8 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://instagram.com/heycutie.in" target="_blank"
+                    class="text-pink-[#DB2777] hover:text-pink-[#DB2777] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://reddit.com/r/heycutie" target="_blank"
+                    class="text-pink-[#DB2777] hover:text-pink-[#DB2777] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 12.75c1.11 0 2.15.425 2.975 1.25l3.55-3.55a8.25 8.25 0 0 0-16.5 0l3.55 3.55A4.023 4.023 0 0 1 12 12.75z">
+                        </path>
+                        <path d="M14.975 14c-.835.825-1.975 1.25-2.975 1.25s-2.14-.425-2.975-1.25"></path>
+                    </svg>
+                </a>
+                <a href="https://medium.com/heycutie" target="_blank"
+                    class="text-pink-[#DB2777] hover:text-pink-[#DB2777] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.9a.533.533 0 0 0-.203.513v12.994a.533.533 0 0 0 .203.513l1.257 1.214v.267h-6.322v-.267l1.298-1.257c.128-.128.128-.165.128-.359V9.854l-3.615 9.195h-.489L5.69 9.855v8.816c-.035.256.05.513.239.697l1.687 2.05v.267H2.815v-.267l1.687-2.05a.803.803 0 0 0 .216-.697V8.304c.019-.195-.06-.384-.197-.512L2.704 5.686V5.42H7.88l3.888 8.558L15.345 5.42h5.093v.266z" />
+                    </svg>
+                </a>
+                <a href="mailto:collaborate@heycutie.in"
+                    class="text-pink-[#DB2777] hover:text-pink-[#DB2777] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">
+                Made with <span class="text-pink-[#DB2777]">❤️</span> for Love
+            </p>
+            <p class="text-xs text-gray-500">
+                © 2024 HeyCutie.in | Spark Connections, Not Just Lines
             </p>
         </div>
-    </div>
-</div>
-<footer class="bg-pink-50 py-8 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-        <div class="flex justify-center space-x-6 mb-6">
-            <a href="https://instagram.com/heycutie.in" target="_blank" class="text-pink-600 hover:text-pink-800 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
-            <a href="https://reddit.com/r/heycutie" target="_blank" class="text-pink-600 hover:text-pink-800 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 12.75c1.11 0 2.15.425 2.975 1.25l3.55-3.55a8.25 8.25 0 0 0-16.5 0l3.55 3.55A4.023 4.023 0 0 1 12 12.75z"></path>
-                    <path d="M14.975 14c-.835.825-1.975 1.25-2.975 1.25s-2.14-.425-2.975-1.25"></path>
-                </svg>
-            </a>
-            <a href="https://medium.com/heycutie" target="_blank" class="text-pink-600 hover:text-pink-800 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.9a.533.533 0 0 0-.203.513v12.994a.533.533 0 0 0 .203.513l1.257 1.214v.267h-6.322v-.267l1.298-1.257c.128-.128.128-.165.128-.359V9.854l-3.615 9.195h-.489L5.69 9.855v8.816c-.035.256.05.513.239.697l1.687 2.05v.267H2.815v-.267l1.687-2.05a.803.803 0 0 0 .216-.697V8.304c.019-.195-.06-.384-.197-.512L2.704 5.686V5.42H7.88l3.888 8.558L15.345 5.42h5.093v.266z"/>
-                </svg>
-            </a>
-            <a href="mailto:collaborate@heycutie.in" class="text-pink-600 hover:text-pink-800 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-            </a>
-        </div>
-        <p class="text-sm text-gray-600 mb-4">
-            Made with <span class="text-pink-500">❤️</span> for Love
-        </p>
-        <p class="text-xs text-gray-500">
-            © 2024 HeyCutie.in | Spark Connections, Not Just Lines
-        </p>
-    </div>
-</footer>
-<script>
-    let pickupLinesData = {};
-    let selectedCategory = null;
-    let userSelectedCategory = false;
-
-    // Enhanced background animations
-    function createFloatingElement() {
-        const elements = [
-            // Hearts
-            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
-            // Circles
-            `<div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-300 to-purple-300"></div>`,
-            // Stars
-            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`,
-            // Diamonds
-            `<div class="w-8 h-8 transform rotate-45 bg-gradient-to-tr from-pink-300 to-purple-300"></div>`,
-            // Sparkles
-            `<svg class="w-8 h-8 text-pink-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>`
-        ];
-
-        const animations = ['float-up', 'float-diagonal', 'float-zigzag'];
-        const element = document.createElement('div');
-        element.className = `floating-element ${animations[Math.floor(Math.random() * animations.length)]}`;
-
-        if (Math.random() > 0.5) {
-            element.classList.add('rotate-animation');
-        }
-        if (Math.random() > 0.7) {
-            element.classList.add('pulse-animation');
-        }
-
-        element.style.left = Math.random() * 100 + 'vw';
-        element.style.opacity = (Math.random() * 0.3 + 0.1).toString();
-        element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
-
-        document.getElementById('animation-container').appendChild(element);
-
-        setTimeout(() => {
-            element.remove();
-        }, 20000);
-    }
-
-    // Create sparkle effect
-    function createSparkle(x, y) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = x + 'px';
-        sparkle.style.top = y + 'px';
-        const size = Math.random() * 10 + 5;
-        sparkle.style.width = size + 'px';
-        sparkle.style.height = size + 'px';
-        document.body.appendChild(sparkle);
-
-        setTimeout(() => sparkle.remove(), 1000);
-    }
-
-    // Create multiple floating elements periodically
-    setInterval(() => {
-        for (let i = 0; i < 2; i++) {
-            setTimeout(() => createFloatingElement(), i * 500);
-        }
-    }, 2000);
-
-    // Mouse move sparkle effect
-    document.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.9) {
-            createSparkle(e.pageX, e.pageY);
-        }
-    });
-
-    // Load pickup lines
-    fetch('data/res.json')
-        .then(response => response.json())
-        .then(data => {
-            pickupLinesData = data;
-        });
-
-    // Category selection
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.dataset.category;
-            document.querySelectorAll('.category-btn').forEach(b => {
-                b.classList.remove('bg-pink-500', 'text-white');
-            });
-            if (selectedCategory === category) {
-                selectedCategory = null;
-                userSelectedCategory = false;
-            } else {
-                selectedCategory = category;
-                userSelectedCategory = true;
-                btn.classList.add('bg-pink-500', 'text-white');
-            }
-        });
-    });
-
-    // Generate button
-    document.getElementById('generateBtn').addEventListener('click', async () => {
-        const loadingIcon = document.getElementById('loadingIcon');
-        const pickupLineElement = document.getElementById('pickupLine');
-
-        // Clear previous selection if it wasn't user-selected
-        if (!userSelectedCategory) {
-            selectedCategory = null;
-            document.querySelectorAll('.category-btn').forEach(btn => {
-                btn.classList.remove('bg-pink-500', 'text-white');
-            });
-        }
-
-        // If no category selected, choose random category
-        if (!selectedCategory) {
-            const categories = Object.keys(pickupLinesData).filter(cat =>
-                pickupLinesData[cat] && pickupLinesData[cat].length > 0
-            );
-            if (categories.length > 0) {
-                selectedCategory = categories[Math.floor(Math.random() * categories.length)];
-                if (!userSelectedCategory) {
-                    document.querySelector(`[data-category="${selectedCategory}"]`)?.classList.add('bg-pink-500', 'text-white');
-                }
-            }
-        }
-
-        loadingIcon.classList.remove('hidden');
-        document.getElementById("generateBtn").disabled = true;
-
-        // Simulate loading
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        if (!pickupLinesData[selectedCategory] || pickupLinesData[selectedCategory].length === 0) {
-            pickupLineElement.textContent = 'No more pickup lines available for this category!';
-        } else {
-            const lines = pickupLinesData[selectedCategory];
-            const randomIndex = Math.floor(Math.random() * lines.length);
-            const line = lines[randomIndex];
-
-            // Remove the used line
-            pickupLinesData[selectedCategory] = lines.filter((_, index) => index !== randomIndex);
-            pickupLineElement.textContent = line;
-        }
-
-        loadingIcon.classList.add('hidden')
-        document.getElementById("generateBtn").disabled = false;
-    });
-
-    // Copy button
-    document.getElementById('copyBtn').addEventListener('click', () => {
-        const pickupLine = document.getElementById('pickupLine').textContent;
-        navigator.clipboard.writeText(pickupLine);
-
-        const toast = document.getElementById('toast');
-        toast.classList.remove('hidden');
-        setTimeout(() => {
-            toast.classList.add('hidden');
-        }, 2000);
-    });
-</script>
-
-<script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-        c[a] = c[a] || function () {
-            (c[a].q = c[a].q || []).push(arguments)
-        };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "p8sofyj5fn");
-</script>
+    </footer>
+    <script src="js/main.js"></script>
 
 </body>
-</html>
 
+</html>
